@@ -7,7 +7,8 @@ namespace Jitter.Models
 {
     public class JitterRepository
     {
-        private JitterContext _context;
+
+         private JitterContext _context;
         public JitterContext Context { get {return _context;}}
 
         public JitterRepository()
@@ -22,7 +23,10 @@ namespace Jitter.Models
 
         public List<JitterUser> GetAllUsers()
         {
-            return null;
+            var query = from users in _context.JitterUsers select users;
+
+            return query.ToList();
+
         }
     }
 }
