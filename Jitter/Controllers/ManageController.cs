@@ -43,6 +43,7 @@ namespace Jitter.Controllers
             get
             {
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                _userManager.FindById('some))
             }
             private set
             {
