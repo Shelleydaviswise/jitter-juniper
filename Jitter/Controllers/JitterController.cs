@@ -55,7 +55,7 @@ namespace Jitter.Controllers
 
             /* V3 */
             JitterUser me = Repo.GetAllUsers().Where(u => u.RealUser.Id == user_id).Single();
-            
+            //real user comes from Application dB context
             List<Jot> list_of_jots = Repo.GetUserJots(me);
             return View(list_of_jots);
         }
